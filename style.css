@@ -1,3 +1,6 @@
+/* ===== TAMAMEN YENİ TASARIM ===== */
+
+/* Genel ayarlar */
 * {
   box-sizing: border-box;
 }
@@ -7,21 +10,63 @@ body {
   padding: 20px;
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+  color: #333;
 }
 
+/* Başlık */
 h1 {
   text-align: center;
   color: #e65100;
-  margin-bottom: 30px;
+  font-size: 28px;
+  margin-bottom: 20px;
 }
 
+/* Arama kutusu */
+#arama {
+  width: 80%;
+  max-width: 500px;
+  padding: 16px;
+  margin: 20px auto 30px auto;
+  display: block;
+  border-radius: 12px;
+  border: 2px solid #ff9f1c;
+  font-size: 18px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+#arama:focus {
+  outline: none;
+  box-shadow: 0 6px 12px rgba(255,159,28,0.5);
+  transform: scale(1.02);
+}
+
+/* Tarif kartları */
 .tarif {
   background: #ffffff;
   max-width: 420px;
   margin: 20px auto;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1)
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarif:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.tarif h2 {
+  color: #ff6b35;
+  margin-bottom: 8px;
+}
+
+.tarif p {
+  margin: 5px 0;
+  line-height: 1.4;
+}
+
 /* Mobil uyumluluk */
 @media (max-width: 600px) {
   body {
@@ -29,7 +74,7 @@ h1 {
   }
 
   h1 {
-    font-size: 22px;
+    font-size: 24px;
   }
 
   .tarif {
@@ -42,7 +87,11 @@ h1 {
     font-size: 18px;
   }
 
-  .tarif p {
-    font-size: 14px;
+  .tarif p, #arama {
+    font-size: 16px;
+  }
+
+  #arama {
+    padding: 14px;
   }
 }
