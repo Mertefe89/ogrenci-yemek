@@ -8,15 +8,15 @@
 body {
   margin: 0;
   padding: 20px;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #fff3e0, #ffe0b2); /* Sıcak yemek temalı arka plan */
   color: #333;
 }
 
 /* Başlık */
 h1 {
   text-align: center;
-  color: #e65100;
+  color: #ff6b35;
   font-size: 28px;
   margin-bottom: 20px;
 }
@@ -26,7 +26,7 @@ h1 {
   width: 80%;
   max-width: 500px;
   padding: 16px;
-  margin: 20px auto 30px auto;
+  margin: 20px auto 30px auto; /* ortala */
   display: block;
   border-radius: 12px;
   border: 2px solid #ff9f1c;
@@ -44,27 +44,45 @@ h1 {
 /* Tarif kartları */
 .tarif {
   background: #ffffff;
-  max-width: 420px;
+  max-width: 500px;
   margin: 20px auto;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .tarif:hover {
   transform: scale(1.02);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.tarif h2 {
-  color: #ff6b35;
-  margin-bottom: 8px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
 }
 
 .tarif p {
   margin: 5px 0;
   line-height: 1.4;
+}
+
+/* H2 başlıkları ve ikonlar */
+.tarif h2 {
+  display: flex;
+  align-items: center;
+  background: #fff3e0; /* hafif turuncu blok */
+  padding: 8px 12px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.tarif h2 span {
+  margin-right: 8px;
+  font-size: 26px; /* emoji ikon boyutu */
+}
+
+/* Adım listesi */
+.tarif ol {
+  margin: 10px 0 0 20px;
+  padding: 0;
 }
 
 /* Mobil uyumluluk */
@@ -78,37 +96,22 @@ h1 {
   }
 
   .tarif {
+    padding: 15px;
     max-width: 100%;
     margin: 15px 0;
-    padding: 15px;
   }
 
   .tarif h2 {
-    font-size: 18px;
+    font-size: 20px;
+    padding: 6px 10px;
   }
 
-  .tarif p, #arama {
-    font-size: 16px;
+  .tarif h2 span {
+    font-size: 22px;
   }
 
   #arama {
+    font-size: 16px;
     padding: 14px;
   }
-}
-
-/* Tarif ikonları ve renkli başlık blokları */
-.tarif h2 {
-  display: flex;
-  align-items: center;
-  background: #fff3e0; /* hafif turuncu blok */
-  padding: 8px 12px;
-  border-radius: 10px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  font-size: 22px;
-}
-
-/* H2 içindeki emoji ikonunu biraz büyüt */
-.tarif h2 span {
-  margin-right: 8px;
-  font-size: 26px;
 }
