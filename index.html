@@ -4,20 +4,157 @@
   <meta charset="UTF-8">
   <title>Ucuz Öğrenci Yemekleri</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css">
+  <style>
+    /* ===== TAMAMEN YENİ TASARIM ===== */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ff6b35;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    /* Arama kutusu */
+    #arama {
+      width: 80%;
+      max-width: 500px;
+      padding: 16px;
+      margin: 20px auto 10px auto;
+      display: block;
+      border-radius: 12px;
+      border: 2px solid #ff9f1c;
+      font-size: 18px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    #arama:focus {
+      outline: none;
+      box-shadow: 0 6px 12px rgba(255,159,28,0.5);
+      transform: scale(1.02);
+    }
+
+    /* Filtre butonları */
+    .filtre-btn {
+      background: #ff9f1c;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      margin: 0 5px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .filtre-btn:hover {
+      background: #ff6b35;
+      transform: scale(1.05);
+    }
+
+    /* Tarif kartları */
+    .tarif {
+      background: #ffffff;
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .tarif:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
+    .tarif p {
+      margin: 5px 0;
+      line-height: 1.4;
+    }
+
+    /* H2 başlıkları ve ikonlar */
+    .tarif h2 {
+      display: flex;
+      align-items: center;
+      background: #fff3e0;
+      padding: 8px 12px;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .tarif h2 span {
+      margin-right: 8px;
+      font-size: 26px;
+    }
+
+    /* Adım listesi */
+    .tarif ol {
+      margin: 10px 0 0 20px;
+      padding: 0;
+    }
+
+    /* Mobil uyumluluk */
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .tarif {
+        padding: 15px;
+        max-width: 100%;
+        margin: 15px 0;
+      }
+
+      .tarif h2 {
+        font-size: 20px;
+        padding: 6px 10px;
+      }
+
+      .tarif h2 span {
+        font-size: 22px;
+      }
+
+      #arama {
+        font-size: 16px;
+        padding: 14px;
+      }
+    }
+
+  </style>
 </head>
 <body>
 
 <h1>🍳 Öğrenci & Ucuz Yemek Tarifleri</h1>
 
-<input
-  type="text"
-  id="arama"
-  placeholder="🔍 Yemek ara (ucuz, hızlı...)"
-  onkeyup="tarifleriFiltrele()"
-/>
+<input type="text" id="arama" placeholder="🔍 Yemek ara (ucuz, hızlı...)" onkeyup="tarifleriFiltrele()">
 
-<!-- Tarifler Başlıyor -->
+<!-- Filtre butonları -->
+<div id="filtre-butons" style="text-align:center; margin-bottom:20px;">
+  <button onclick="filtrele('ucuz')" class="filtre-btn">💰 Ucuz</button>
+  <button onclick="filtrele('hizli')" class="filtre-btn">⚡ Hızlı</button>
+  <button onclick="filtrele('hepsi')" class="filtre-btn">🔄 Hepsini Göster</button>
+</div>
+
+<!-- Tarifler -->
 
 <div class="tarif" data-fiyat="25" data-sure="15">
   <h2><span>🍝</span>Makarna</h2>
@@ -101,26 +238,43 @@
   </ol>
 </div>
 
-<!-- Tarifler Bitti -->
-
 <script>
-function tarifleriFiltrele() {
-  const arama = document.getElementById("arama").value.toLowerCase();
-  const tarifler = document.querySelectorAll(".tarif");
+  function tarifleriFiltrele() {
+    const arama = document.getElementById("arama").value.toLowerCase();
+    const tarifler = document.querySelectorAll(".tarif");
 
-  tarifler.forEach(tarif => {
-    const metin = tarif.innerText.toLowerCase();
-    const fiyat = parseInt(tarif.dataset.fiyat);
-    const sure = parseInt(tarif.dataset.sure);
+    tarifler.forEach(tarif => {
+      const metin = tarif.innerText.toLowerCase();
+      const fiyat = parseInt(tarif.dataset.fiyat);
+      const sure = parseInt(tarif.dataset.sure);
 
-    let goster = metin.includes(arama);
+      let goster = metin.includes(arama);
 
-    if (arama.includes("ucuz") && fiyat > 20) goster = false;
-    if (arama.includes("hızlı") && sure > 15) goster = false;
+      if (arama.includes("ucuz") && fiyat > 20) goster = false;
+      if (arama.includes("hızlı") && sure > 15) goster = false;
 
-    tarif.style.display = goster ? "block" : "none";
-  });
-}
+      tarif.style.display = goster ? "block" : "none";
+    });
+  }
+
+  function filtrele(tip) {
+    const tarifler = document.querySelectorAll(".tarif");
+
+    tarifler.forEach(tarif => {
+      const fiyat = parseInt(tarif.dataset.fiyat);
+      const sure = parseInt(tarif.dataset.sure);
+
+      if (tip === 'ucuz') {
+        tarif.style.display = (fiyat <= 20) ? "block" : "none";
+      } else if (tip === 'hizli') {
+        tarif.style.display = (sure <= 15) ? "block" : "none";
+      } else {
+        tarif.style.display = "block";
+      }
+    });
+
+    document.getElementById("arama").value = "";
+  }
 </script>
 
 </body>
