@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <title>Ucuz Öğrenci Yemekleri</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
-
 <body>
 
 <h1>🍳 Öğrenci & Ucuz Yemek Tarifleri</h1>
@@ -18,11 +17,20 @@
   onkeyup="tarifleriFiltrele()"
 />
 
+<!-- Tarifler Başlıyor -->
+
 <div class="tarif" data-fiyat="25" data-sure="15">
   <h2>🍝 Makarna</h2>
   <p><strong>Malzemeler:</strong> makarna, salça, yağ</p>
   <p><strong>Fiyat:</strong> ~25 TL</p>
   <p><strong>Süre:</strong> 15 dakika</p>
+  <ol>
+    <li>Bir tencereye su koy ve kaynat.</li>
+    <li>Makarna ekle ve paket üzerindeki süre kadar haşla.</li>
+    <li>Başka bir tavada yağı ısıt ve salçayı kavur.</li>
+    <li>Haşlanmış makarnayı süz ve salçalı karışıma ekle.</li>
+    <li>İyice karıştır, sıcak servis yap.</li>
+  </ol>
 </div>
 
 <div class="tarif" data-fiyat="15" data-sure="10">
@@ -30,6 +38,13 @@
   <p><strong>Malzemeler:</strong> yumurta, bayat ekmek, yağ</p>
   <p><strong>Fiyat:</strong> ~15 TL</p>
   <p><strong>Süre:</strong> 10 dakika</p>
+  <ol>
+    <li>Yumurtayı bir kaseye kır ve çırp.</li>
+    <li>Tavayı ısıt ve biraz yağ koy.</li>
+    <li>Ekmeği yumurtaya batır ve tavada kızart.</li>
+    <li>İki tarafı da güzelce pişince tabağa al.</li>
+    <li>Sıcak servis yap.</li>
+  </ol>
 </div>
 
 <div class="tarif" data-fiyat="20" data-sure="20">
@@ -37,6 +52,13 @@
   <p><strong>Malzemeler:</strong> patates, yağ, tuz</p>
   <p><strong>Fiyat:</strong> ~20 TL</p>
   <p><strong>Süre:</strong> 20 dakika</p>
+  <ol>
+    <li>Patatesleri soy ve ince dilimler halinde kes.</li>
+    <li>Yağı tavaya koy ve iyice ısıt.</li>
+    <li>Patatesleri yağa at ve altın rengi olana kadar kızart.</li>
+    <li>Kağıt havlu üzerine al, fazla yağı süz.</li>
+    <li>Tuzla tatlandır ve sıcak servis yap.</li>
+  </ol>
 </div>
 
 <div class="tarif" data-fiyat="18" data-sure="15">
@@ -44,6 +66,13 @@
   <p><strong>Malzemeler:</strong> pirinç, yağ, tuz</p>
   <p><strong>Fiyat:</strong> ~18 TL</p>
   <p><strong>Süre:</strong> 15 dakika</p>
+  <ol>
+    <li>Pirinci yıka ve süz.</li>
+    <li>Tavada yağı ısıt, pirinci ekle ve kavur.</li>
+    <li>Üzerine su ekle ve suyunu çekene kadar pişir.</li>
+    <li>Karıştır ve tuz ekle.</li>
+    <li>Sıcak servis yap.</li>
+  </ol>
 </div>
 
 <div class="tarif" data-fiyat="12" data-sure="5">
@@ -51,6 +80,11 @@
   <p><strong>Malzemeler:</strong> hazır çorba, su</p>
   <p><strong>Fiyat:</strong> ~12 TL</p>
   <p><strong>Süre:</strong> 5 dakika</p>
+  <ol>
+    <li>Su kaynat ve hazır çorbayı içine ekle.</li>
+    <li>İyice karıştır ve paket talimatına göre pişir.</li>
+    <li>Sıcak servis yap.</li>
+  </ol>
 </div>
 
 <div class="tarif" data-fiyat="22" data-sure="8">
@@ -58,7 +92,16 @@
   <p><strong>Malzemeler:</strong> ekmek, peynir, yağ</p>
   <p><strong>Fiyat:</strong> ~22 TL</p>
   <p><strong>Süre:</strong> 8 dakika</p>
+  <ol>
+    <li>Tost makinesini ısıt ve biraz yağ sür.</li>
+    <li>Ekmeğin arasına peynir koy.</li>
+    <li>Tost makinesine yerleştir ve altın rengi olana kadar pişir.</li>
+    <li>Makineden al ve biraz soğumasını bekle.</li>
+    <li>Sıcak servis yap.</li>
+  </ol>
 </div>
+
+<!-- Tarifler Bitti -->
 
 <script>
 function tarifleriFiltrele() {
