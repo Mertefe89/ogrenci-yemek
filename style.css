@@ -95,3 +95,20 @@ h1 {
     padding: 14px;
   }
 }
+
+/* Tarif ikonları ve renkli başlık blokları */
+.tarif h2 {
+  display: flex;
+  align-items: center;
+  background: #fff3e0; /* hafif turuncu blok */
+  padding: 8px 12px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  font-size: 22px;
+}
+
+/* H2 içindeki emoji ikonunu biraz büyüt */
+.tarif h2 span {
+  margin-right: 8px;
+  font-size: 26px;
+}
