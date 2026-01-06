@@ -2,14 +2,12 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Ucuz Öğrenci Yemekleri</title>
+  <title>Ucuz Öğrenci Yemekleri & Tatlı Tarifleri</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     /* ===== TAMAMEN YENİ TASARIM ===== */
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -80,10 +78,7 @@
       box-shadow: 0 12px 24px rgba(0,0,0,0.15);
     }
 
-    .tarif p {
-      margin: 5px 0;
-      line-height: 1.4;
-    }
+    .tarif p { margin: 5px 0; line-height: 1.4; }
 
     /* H2 başlıkları ve ikonlar */
     .tarif h2 {
@@ -97,76 +92,54 @@
       margin-bottom: 12px;
     }
 
-    .tarif h2 span {
-      margin-right: 8px;
-      font-size: 26px;
-    }
+    .tarif h2 span { margin-right: 8px; font-size: 26px; }
 
-    /* Adım listesi */
-    .tarif ol {
-      margin: 10px 0 0 20px;
-      padding: 0;
+    .tarif ol { margin: 10px 0 0 20px; padding: 0; }
+
+    /* Tatlı başlık */
+    .tatli-baslik {
+      text-align: center;
+      color: #d81b60;
+      font-size: 24px;
+      margin-top: 40px;
     }
 
     /* Mobil uyumluluk */
     @media (max-width: 600px) {
-      body {
-        padding: 10px;
-      }
-
-      h1 {
-        font-size: 24px;
-      }
-
-      .tarif {
-        padding: 15px;
-        max-width: 100%;
-        margin: 15px 0;
-      }
-
-      .tarif h2 {
-        font-size: 20px;
-        padding: 6px 10px;
-      }
-
-      .tarif h2 span {
-        font-size: 22px;
-      }
-
-      #arama {
-        font-size: 16px;
-        padding: 14px;
-      }
+      body { padding: 10px; }
+      h1 { font-size: 24px; }
+      .tarif { padding: 15px; max-width: 100%; margin: 15px 0; }
+      .tarif h2 { font-size: 20px; padding: 6px 10px; }
+      .tarif h2 span { font-size: 22px; }
+      #arama { font-size: 16px; padding: 14px; }
+      .tatli-baslik { font-size: 20px; }
     }
 
   </style>
 </head>
 <body>
 
-<h1>🍳 Öğrenci & Ucuz Yemek Tarifleri</h1>
+<h1>🍳 Öğrenci Yemekleri & 🍰 Tatlı Tarifleri</h1>
 
 <input type="text" id="arama" placeholder="🔍 Yemek ara (ucuz, hızlı...)" onkeyup="tarifleriFiltrele()">
 
-<!-- Filtre butonları -->
 <div id="filtre-butons" style="text-align:center; margin-bottom:20px;">
   <button onclick="filtrele('ucuz')" class="filtre-btn">💰 Ucuz</button>
   <button onclick="filtrele('hizli')" class="filtre-btn">⚡ Hızlı</button>
   <button onclick="filtrele('hepsi')" class="filtre-btn">🔄 Hepsini Göster</button>
 </div>
 
-<!-- Tarifler -->
-
+<!-- Yemek Tarifleri -->
 <div class="tarif" data-fiyat="25" data-sure="15">
   <h2><span>🍝</span>Makarna</h2>
   <p><strong>Malzemeler:</strong> makarna, salça, yağ</p>
   <p><strong>Fiyat:</strong> ~25 TL</p>
   <p><strong>Süre:</strong> 15 dakika</p>
   <ol>
-    <li>Bir tencereye su koy ve kaynat.</li>
-    <li>Makarna ekle ve paket üzerindeki süre kadar haşla.</li>
-    <li>Başka bir tavada yağı ısıt ve salçayı kavur.</li>
-    <li>Haşlanmış makarnayı süz ve salçalı karışıma ekle.</li>
-    <li>İyice karıştır, sıcak servis yap.</li>
+    <li>Su kaynat ve makarnayı haşla.</li>
+    <li>Salçayı yağ ile kavur.</li>
+    <li>Haşlanan makarnayı süz ve salçaya ekle.</li>
+    <li>Karıştır ve servis et.</li>
   </ol>
 </div>
 
@@ -176,11 +149,8 @@
   <p><strong>Fiyat:</strong> ~15 TL</p>
   <p><strong>Süre:</strong> 10 dakika</p>
   <ol>
-    <li>Yumurtayı bir kaseye kır ve çırp.</li>
-    <li>Tavayı ısıt ve biraz yağ koy.</li>
-    <li>Ekmeği yumurtaya batır ve tavada kızart.</li>
-    <li>İki tarafı da güzelce pişince tabağa al.</li>
-    <li>Sıcak servis yap.</li>
+    <li>Yumurtayı çırp, ekmeği içine batır.</li>
+    <li>Tavada kızart ve servis et.</li>
   </ol>
 </div>
 
@@ -190,11 +160,9 @@
   <p><strong>Fiyat:</strong> ~20 TL</p>
   <p><strong>Süre:</strong> 20 dakika</p>
   <ol>
-    <li>Patatesleri soy ve ince dilimler halinde kes.</li>
-    <li>Yağı tavaya koy ve iyice ısıt.</li>
-    <li>Patatesleri yağa at ve altın rengi olana kadar kızart.</li>
-    <li>Kağıt havlu üzerine al, fazla yağı süz.</li>
-    <li>Tuzla tatlandır ve sıcak servis yap.</li>
+    <li>Patatesleri doğra.</li>
+    <li>Yağı ısıt ve kızart.</li>
+    <li>Tuzla servis et.</li>
   </ol>
 </div>
 
@@ -204,23 +172,9 @@
   <p><strong>Fiyat:</strong> ~18 TL</p>
   <p><strong>Süre:</strong> 15 dakika</p>
   <ol>
-    <li>Pirinci yıka ve süz.</li>
-    <li>Tavada yağı ısıt, pirinci ekle ve kavur.</li>
-    <li>Üzerine su ekle ve suyunu çekene kadar pişir.</li>
-    <li>Karıştır ve tuz ekle.</li>
-    <li>Sıcak servis yap.</li>
-  </ol>
-</div>
-
-<div class="tarif" data-fiyat="12" data-sure="5">
-  <h2><span>🥣</span>Çorba (Hazır)</h2>
-  <p><strong>Malzemeler:</strong> hazır çorba, su</p>
-  <p><strong>Fiyat:</strong> ~12 TL</p>
-  <p><strong>Süre:</strong> 5 dakika</p>
-  <ol>
-    <li>Su kaynat ve hazır çorbayı içine ekle.</li>
-    <li>İyice karıştır ve paket talimatına göre pişir.</li>
-    <li>Sıcak servis yap.</li>
+    <li>Pirinci yıka.</li>
+    <li>Yağda kavur ve su ekle.</li>
+    <li>Pişir ve servis et.</li>
   </ol>
 </div>
 
@@ -230,11 +184,49 @@
   <p><strong>Fiyat:</strong> ~22 TL</p>
   <p><strong>Süre:</strong> 8 dakika</p>
   <ol>
-    <li>Tost makinesini ısıt ve biraz yağ sür.</li>
-    <li>Ekmeğin arasına peynir koy.</li>
-    <li>Tost makinesine yerleştir ve altın rengi olana kadar pişir.</li>
-    <li>Makineden al ve biraz soğumasını bekle.</li>
-    <li>Sıcak servis yap.</li>
+    <li>Ekmeğe peynir koy.</li>
+    <li>Tost makinesinde pişir.</li>
+    <li>Servis et.</li>
+  </ol>
+</div>
+
+<!-- Tatlı Başlığı -->
+<h2 class="tatli-baslik">🍰 Tatlı Tarifleri</h2>
+
+<div class="tarif" data-fiyat="20" data-sure="15">
+  <h2><span>🍫</span>Çikolatalı Kek</h2>
+  <p><strong>Malzemeler:</strong> un, şeker, kakao, yumurta, yağ</p>
+  <p><strong>Fiyat:</strong> ~20 TL</p>
+  <p><strong>Süre:</strong> 15 dakika</p>
+  <ol>
+    <li>Tüm malzemeleri karıştır.</li>
+    <li>Kalıba dök ve fırına ver.</li>
+    <li>Altın rengi olunca çıkar.</li>
+    <li>Soğuyunca dilimle ve servis et.</li>
+  </ol>
+</div>
+
+<div class="tarif" data-fiyat="12" data-sure="5">
+  <h2><span>🍮</span>Pratik Puding</h2>
+  <p><strong>Malzemeler:</strong> hazır puding, süt</p>
+  <p><strong>Fiyat:</strong> ~12 TL</p>
+  <p><strong>Süre:</strong> 5 dakika</p>
+  <ol>
+    <li>Sütü ısıt ve pudingi ekle.</li>
+    <li>Karıştır ve kaseye koy.</li>
+    <li>Soğuduktan sonra servis et.</li>
+  </ol>
+</div>
+
+<div class="tarif" data-fiyat="18" data-sure="10">
+  <h2><span>🍎</span>Elmalı Tatlı</h2>
+  <p><strong>Malzemeler:</strong> elma, şeker, tarçın, hamur</p>
+  <p><strong>Fiyat:</strong> ~18 TL</p>
+  <p><strong>Süre:</strong> 10 dakika</p>
+  <ol>
+    <li>Elmaları doğra ve şeker + tarçınla karıştır.</li>
+    <li>Hamurun içine koy ve fırına ver.</li>
+    <li>Altın rengi olunca çıkar ve servis et.</li>
   </ol>
 </div>
 
